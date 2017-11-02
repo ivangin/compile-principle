@@ -9,7 +9,7 @@ int main(
 	@
 	while(i<10)
 	{
-		printf("hello waorld!");//´òÓ¡hello world 
+		printf("hello world!");//´òÓ¡hello world 
 	
 	return 0; 
 }

@@ -1,9 +1,10 @@
-ï»¿#include<stdio.h>
+#include<stdio.h>
 /*
-æµ‹è¯•æ³¨é‡Š 
+²âÊÔÊı¾İ
 */ 
 int main(void)
 {
 	printf("hello world!");
+	
 	return 0;
 } 

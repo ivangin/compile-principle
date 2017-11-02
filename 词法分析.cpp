@@ -67,7 +67,7 @@ int small_bracket = 0;//小括号
 
 void sum(void)//计算字符数 行数 存注释
 {
-	file.open("data.c");
+	file.open("data2.c");
 	int state = 0;//状态转换 0:正常 1:输入一个/  2:输入/*
 	char temp;//暂存
 	string temp_comment;//暂存注释
@@ -179,7 +179,7 @@ void word_analyse(void)
 			ptr++;
 		else if ('\t' == *ptr)
 			ptr++;
-		else if (isalpha(*ptr) || '_' == *ptr)//关键字和标识符
+		else if (isalpha(unsigned(*ptr)) || '_' == *ptr)//关键字和标识符
 		{
 			temp_word.clear();
 			while (isalnum(*ptr) || '_' == *ptr)
@@ -205,15 +205,15 @@ void word_analyse(void)
 			}
 		}
 
-		else if (isdigit(*ptr))//数字
+		else if (isdigit(unsigned(*ptr)))//数字
 		{
 			temp_word.clear();
-			while (isdigit(*ptr))
+			while (isdigit(unsigned(*ptr)))
 			{
 				temp_word.append(1, *ptr);
 				ptr++;
 			}
-			if (isalpha(*ptr) || '_' == *ptr)
+			if (isalpha(unsigned(*ptr)) || '_' == *ptr)
 			{
 				while (' ' == *ptr && '\0' == *ptr)
 				{
@@ -437,7 +437,7 @@ void word_analyse(void)
 		}
 		else if ('/' == *ptr)
 		{
-			temp_word.clear();
+			//temp_word.clear();
 			if ('=' == *(ptr + 1))
 			{
 				temp_word = "/=";
@@ -678,7 +678,7 @@ void analyse(void)
 void show(void)
 {
 	cout << endl;
-
+	cout << "各符号及出现次数统计如下：" << endl;
 	map<string, int>::iterator ltr;
 	for (ltr = keyword.begin(); ltr != keyword.end(); ltr++)
 		if (ltr->second != 0)
@@ -708,7 +708,7 @@ int main(void)
 {
 
 
-	file.open("data.c");
+	file.open("data2.c");
 	if (!file)
 		cout << endl << "找不到文件！" << endl;
 	else
