@@ -1,6 +1,6 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 /*
-²âÊÔ×¢ÊÍ 
+æµ‹è¯•æ³¨é‡Š 
 */ 
 int main(void)
 {
