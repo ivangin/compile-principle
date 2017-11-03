@@ -67,7 +67,7 @@ int small_bracket = 0;//小括号
 
 void sum(void)//计算字符数 行数 存注释
 {
-	file.open("data2.c");
+	file.open("test.c");
 	int state = 0;//状态转换 0:正常 1:输入一个/  2:输入/*
 	char temp;//暂存
 	string temp_comment;//暂存注释
@@ -708,7 +708,7 @@ int main(void)
 {
 
 
-	file.open("data2.c");
+	file.open("test.c");
 	if (!file)
 		cout << endl << "找不到文件！" << endl;
 	else
